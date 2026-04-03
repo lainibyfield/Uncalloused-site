@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Steel Toe Rebellion — Uncalloused</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .st-hero{padding:5rem 3rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+  .st-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.0;color:var(--cream);}
+  .st-hero h1 em{font-style:italic;color:var(--gold);display:block;}
+  .st-sub{font-size:0.72rem;line-height:1.9;color:var(--muted);margin-top:1.75rem;border-left:1px solid rgba(176,141,106,0.4);padding-left:1.25rem;}
+  .st-cta{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;}
+
+  .origin-box{border:0.5px solid var(--border);padding:2.5rem;position:relative;}
+  .origin-box::before{content:'why steel toe';position:absolute;top:-0.6rem;left:1.25rem;background:var(--ink);padding:0 0.6rem;font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(232,226,217,0.28);}
+  .origin-text{font-family:'Playfair Display',serif;font-size:0.95rem;line-height:1.85;color:var(--muted);font-style:italic;}
+  .origin-text strong{color:var(--cream);font-style:normal;}
+
+  .what-strip{padding:3rem 3rem;border-top:0.5px solid var(--border);}
+  .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:1.5rem;}
+  .what-cell{background:var(--ink);padding:1.75rem;}
+  .wc-num{font-size:0.55rem;letter-spacing:0.15em;color:rgba(232,226,217,0.28);margin-bottom:0.7rem;}
+  .wc-title{font-family:'Playfair Display',serif;font-size:0.9rem;color:var(--cream);font-style:italic;margin-bottom:0.5rem;}
+  .wc-body{font-size:0.63rem;line-height:1.85;color:var(--muted);}
+
+  .days-strip{padding:0 3rem 3rem;}
+  .days-label{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(176,141,106,0.55);margin-bottom:1.5rem;}
+  .days-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1px;background:var(--border);}
+  .day-peek{background:var(--ink);padding:1rem 1.25rem;}
+  .day-num{font-size:0.5rem;letter-spacing:0.15em;color:rgba(232,226,217,0.25);margin-bottom:0.3rem;}
+  .day-subject{font-size:0.65rem;color:var(--cream);margin-bottom:0.2rem;}
+  .day-ritual{font-size:0.58rem;color:var(--muted);line-height:1.6;}
+
+  .price-strip{margin:0 3rem 4rem;padding:2rem 2.5rem;border:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;}
+  .price-left{}
+  .price-label{font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(232,226,217,0.28);margin-bottom:0.4rem;}
+  .price-val{font-family:'Playfair Display',serif;font-size:2rem;color:var(--cream);}
+  .price-note{font-size:0.58rem;color:var(--dim);margin-top:0.2rem;}
+  .price-includes{margin-top:1rem;}
+  .pi{font-size:0.62rem;color:var(--muted);padding-left:1rem;position:relative;line-height:1.8;}
+  .pi::before{content:'—';position:absolute;left:0;color:rgba(176,141,106,0.4);}
+  .pi.on{color:#e8e2d9;}
+  .pi.on::before{color:var(--gold);}
+
+  @media(max-width:760px){
+    .st-hero{grid-template-columns:1fr;padding:3rem 1.5rem 2rem;gap:2rem;}
+    .what-strip,.days-strip{padding-left:1.5rem;padding-right:1.5rem;}
+    .what-grid{grid-template-columns:1fr;}
+    .price-strip{margin:0 1.5rem 3rem;flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">uncalloused</a>
+  <div class="nav-tabs">
+    <a class="nav-tab" href="index.html">home</a>
+    <a class="nav-tab" href="index.html#calendar">the calendar</a>
+    <a class="nav-tab" href="index.html#rue">meet rue</a>
+    <a class="nav-tab active" href="explore.html">explore</a>
+    <a class="nav-tab cta" href="index.html#subscribe">subscribe</a>
+  </div>
+</nav>
+
+<div class="st-hero">
+  <div>
+    <div class="eyebrow">soft where it counts · 30-day series</div>
+    <h1>Steel Toe<br><em>Rebellion.</em></h1>
+    <p class="st-sub">Remove the Cage. Feel the Ground. Thirty mornings. One email at 8am. Rituals, reflexology, olfactory science, literary excerpts, and questions your HR department would prefer you never asked. For men who are done pretending armor is the same as strength.</p>
+    <div class="st-cta">
+      <a class="btn-p" href="index.html#subscribe">start the rebellion — $27 →</a>
+      <a class="btn-g" href="callus-index.html">read what Rue says first</a>
+    </div>
+  </div>
+  <div class="origin-box">
+    <p class="origin-text">A steel-toed boot <strong>bends inward under enough force.</strong> The cap doesn't shatter — it folds. And when it folds, it crushes the very toe it was designed to protect. The armor becomes the injury.<br><br>Most men learn this too late, about boots and about themselves.<br><br>This series is for the ones who noticed.</p>
+  </div>
+</div>
+
+<div class="what-strip">
+  <div class="sec-label">what thirty days looks like</div>
+  <div class="what-grid">
+    <div class="what-cell"><div class="wc-num">rituals</div><div class="wc-title">Daily practice</div><div class="wc-body">Each morning begins with something physical — a soak, a texture, a breath paired with movement. Small enough to do. Real enough to feel. The kind of self-care that doesn't require a candle or an apology.</div></div>
+    <div class="what-cell"><div class="wc-num">science</div><div class="wc-title">The research behind it</div><div class="wc-body">Olfactory science. Reflexology trials. Somatic grounding. Vagal tone. Why the body holds what the mind dismisses. Rue-adjacent in tone — informative, not prescriptive, never condescending.</div></div>
+    <div class="what-cell"><div class="wc-num">community</div><div class="wc-title">Softness Guides</div><div class="wc-body">Every Sunday, the Softness Guides — women who've submitted questions, answers, and observations — respond to dilemmas from the cohort. Not advice. Not therapy. Something rarer: honest conversation across the gender line.</div></div>
+  </div>
+</div>
+
+<div class="days-strip">
+  <div class="days-label">a few days from the sequence</div>
+  <div class="days-grid">
+    <div class="day-peek"><div class="day-num">Day 1</div><div class="day-subject">Break the Seal</div><div class="day-ritual">Slip off your hardest shoes. Stand barefoot 60 seconds. Note every surface texture.</div></div>
+    <div class="day-peek"><div class="day-num">Day 5</div><div class="day-subject">Ground Walk</div><div class="day-ritual">Five minutes barefoot on grass or sand. Grounding research links skin-soil contact with reduced inflammation.</div></div>
+    <div class="day-peek"><div class="day-num">Day 12</div><div class="day-subject">Classic Toesday</div><div class="day-ritual">Venus in Furs excerpt on boot worship. Literature as safe mental rehearsal of power exchange.</div></div>
+    <div class="day-peek"><div class="day-num">Day 17</div><div class="day-subject">Reflex Point One</div><div class="day-ritual">Solar plexus point under the ball of the foot. 60 seconds. Log your pulse before and after.</div></div>
+    <div class="day-peek"><div class="day-num">Day 22</div><div class="day-subject">Stiletto Study</div><div class="day-ritual">Stand in heels for five minutes. Elevation activates calves; alters self-perception.</div></div>
+    <div class="day-peek"><div class="day-num">Day 27</div><div class="day-subject">Odor Truth</div><div class="day-ritual">Remove shoes after a workout. Inhale slowly. Notice if shame appears. That's the work.</div></div>
+    <div class="day-peek"><div class="day-num">Day 29</div><div class="day-subject">National Stinky Feet Day</div><div class="day-ritual">Play turns embarrassment into bonding. Post your photo. Votes decide odor champion.</div></div>
+    <div class="day-peek"><div class="day-num">Day 30</div><div class="day-subject">Steel Free Graduation</div><div class="day-ritual">Write one courage result. Claim your digital badge. Eligible for 15% calendar discount.</div></div>
+  </div>
+</div>
+
+<div class="price-strip">
+  <div class="price-left">
+    <div class="price-label">steel toe rebellion</div>
+    <div class="price-val">$27</div>
+    <div class="price-note">one-time · starts the morning after purchase · 30 consecutive days</div>
+    <div class="price-includes" style="margin-top:1.25rem;">
+      <div class="pi on">30 daily emails · 8am · rituals + science + prompts</div>
+      <div class="pi on">four Classic Toesday literary drops</div>
+      <div class="pi on">Softness Guides Q&A every Sunday</div>
+      <div class="pi on">graduation badge + 15% off the 2027 calendar</div>
+      <div class="pi">statements read "Uncalloused Media"</div>
+    </div>
+  </div>
+  <a class="btn-p" href="index.html#subscribe">start the rebellion →</a>
+</div>
+
+<div class="xlink-strip">
+  <span class="xlink-label">explore more</span>
+  <a class="xlink" href="manifesto.html">The Manifesto — where this started</a>
+  <a class="xlink" href="callus-index.html">The Callus Index — what Rue has answered</a>
+  <a class="xlink" href="glossary.html#S">somatic grounding — the science</a>
+  <a class="xlink" href="explore.html">← back to explore</a>
+</div>
+
+<footer>
+  <a class="f-logo" href="index.html">uncalloused</a>
+  <div class="f-copy">uncalloused.com · educational only · all contributors 18+ · uncalloused media · steel toe rebellion is a project of uncalloused media</div>
+</footer>
+</body>
+</html>

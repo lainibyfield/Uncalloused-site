@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Reading Room — Uncalloused</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .rr-intro{padding:4rem 3rem 2rem;max-width:640px;}
+  .rr-intro p{font-size:0.7rem;line-height:1.85;color:var(--muted);margin-top:1rem;}
+
+  .rr-section{padding:0 3rem 3rem;}
+  .rr-section-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cream);font-style:italic;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--border);}
+
+  .resource{border-top:0.5px solid var(--border);padding:1.25rem 0;display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start;}
+  .resource:last-child{border-bottom:0.5px solid var(--border);margin-bottom:2.5rem;}
+  .res-title{font-size:0.72rem;color:var(--cream);margin-bottom:0.3rem;line-height:1.4;}
+  .res-source{font-size:0.55rem;letter-spacing:0.1em;color:var(--dim);margin-bottom:0.5rem;}
+  .res-note{font-size:0.63rem;line-height:1.8;color:var(--muted);}
+  .res-rue{font-size:0.6rem;line-height:1.75;color:var(--dim);margin-top:0.6rem;border-left:1px solid rgba(176,141,106,0.2);padding-left:0.85rem;font-style:italic;}
+  .res-rue::before{content:'Rue: ';color:var(--gold);font-style:normal;}
+  .res-tag{display:inline-block;font-size:0.47rem;letter-spacing:0.1em;padding:2px 7px;border:0.5px solid var(--border);color:var(--dim);white-space:nowrap;}
+
+  /* Book card — affiliate slot */
+  .book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);margin-bottom:2.5rem;}
+  .book-card{background:var(--ink);padding:1.75rem;}
+  .book-spine{width:100%;height:4px;background:rgba(176,141,106,0.2);margin-bottom:1.25rem;}
+  .book-title{font-family:'Playfair Display',serif;font-size:0.9rem;color:var(--cream);font-style:italic;line-height:1.3;margin-bottom:0.3rem;}
+  .book-author{font-size:0.58rem;color:var(--dim);margin-bottom:0.6rem;}
+  .book-note{font-size:0.6rem;line-height:1.75;color:var(--muted);margin-bottom:1rem;}
+  .book-link{font-size:0.58rem;color:var(--gold);text-decoration:none;border-bottom:0.5px solid rgba(176,141,106,0.3);padding-bottom:1px;}
+  .book-link:hover{border-color:var(--gold);}
+  .affiliate-note{font-size:0.55rem;color:rgba(232,226,217,0.22);margin-bottom:2rem;font-style:italic;}
+
+  @media(max-width:760px){
+    .rr-intro,.rr-section{padding-left:1.5rem;padding-right:1.5rem;}
+    .resource{grid-template-columns:1fr;}
+    .book-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">uncalloused</a>
+  <div class="nav-tabs">
+    <a class="nav-tab" href="index.html">home</a>
+    <a class="nav-tab" href="index.html#calendar">the calendar</a>
+    <a class="nav-tab" href="index.html#rue">meet rue</a>
+    <a class="nav-tab active" href="explore.html">explore</a>
+    <a class="nav-tab cta" href="index.html#subscribe">subscribe</a>
+  </div>
+</nav>
+
+<div class="rr-intro">
+  <div class="sec-label">body truth · research</div>
+  <h2>The Reading <em>Room</em></h2>
+  <p>The research Rue cites. The books she'd recommend if you asked. Organized by topic — not by prestige. A source only appears here if it's genuinely useful or genuinely interesting. Links to external research open in a new tab. Book links are Amazon affiliate — they cost you nothing extra and help keep this site running.</p>
+</div>
+
+<div class="rr-section">
+  <div class="affiliate-note">Disclosure: book links below are Amazon affiliate links. The price is the same for you; we receive a small commission. We only list books we'd actually recommend.</div>
+
+  <div class="rr-section-title">Earthing & grounding</div>
+
+  <div class="resource">
+    <div>
+      <div class="res-title">Earthing: The Most Important Health Discovery Ever? — Ober, Sinatra & Zucker</div>
+      <div class="res-source">Book · Basic Health Publications · 2010, updated 2014</div>
+      <div class="res-note">The foundational popular text on earthing research. Documents the electron-transfer hypothesis and compiles early clinical observations on inflammation, sleep, and cortisol. Methodologically uneven in places but honest about its limitations. A useful starting point before going to primary literature.</div>
+      <div class="res-rue">This is the book that makes doctors uncomfortable because it's too simple. Bare feet on earth. I'm not saying it cures everything. I'm saying it does something.</div>
+    </div>
+    <span class="res-tag">book · affiliate</span>
+  </div>
+
+  <div class="resource">
+    <div>
+      <div class="res-title">Earthing reduces blood viscosity — a primary factor in cardiovascular disease</div>
+      <div class="res-source">Journal of Alternative and Complementary Medicine · Chevalier et al. · 2013</div>
+      <div class="res-note">Peer-reviewed study showing measurable changes in red blood cell zeta potential following earthing. One of the stronger mechanistic papers in the field.</div>
+    </div>
+    <span class="res-tag">journal</span>
+  </div>
+
+  <div class="rr-section-title">Reflexology</div>
+
+  <div class="resource">
+    <div>
+      <div class="res-title">Reflexology treatment relieves symptoms of multiple sclerosis</div>
+      <div class="res-source">Multiple Sclerosis Journal · Siev-Ner et al. · 2003</div>
+      <div class="res-note">Randomized controlled trial. Subjects receiving reflexology showed significant improvements in motor, sensory, and urinary symptoms versus controls. One of the most cited clinical reflexology studies.</div>
+      <div class="res-rue">Press here for instant calm is not just a caption. There is a body of evidence behind it.</div>
+    </div>
+    <span class="res-tag">clinical trial</span>
+  </div>
+
+  <div class="resource">
+    <div>
+      <div class="res-title">The effect of foot reflexology on anxiety and pain in patients</div>
+      <div class="res-source">Journal of Clinical Nursing · meta-analysis · 2014</div>
+      <div class="res-note">Meta-analysis of 17 studies. Consistent reduction in anxiety scores across contexts. Effect size modest but reliable. The mechanisms remain undetermined; the effect is not.</div>
+    </div>
+    <span class="res-tag">meta-analysis</span>
+  </div>
+
+  <div class="rr-section-title">Olfaction, attraction & the body</div>
+
+  <div class="resource">
+    <div>
+      <div class="res-title">The scent of a woman: Men's testosterone responses to olfactory ovulation cues</div>
+      <div class="res-source">Psychological Science · Miller & Maner · 2010</div>
+      <div class="res-note">Documents measurable hormonal response to natural female body scent. Part of a larger literature establishing that humans use olfactory cues in mate assessment far more than we consciously acknowledge.</div>
+      <div class="res-rue">Your gym socks are doing more work than you think. This is not a compliment or an insult. It is biology.</div>
+    </div>
+    <span class="res-tag">journal</span>
+  </div>
+
+  <div class="resource">
+    <div>
+      <div class="res-title">Smell and the brain: The limbic system and olfactory processing</div>
+      <div class="res-source">Neuroscience & Biobehavioral Reviews · review article</div>
+      <div class="res-note">Technical review of why scent bypasses the thalamus and connects directly to the amygdala and hippocampus — the anatomical basis for why smells trigger emotion and memory more powerfully than any other sense.</div>
+    </div>
+    <span class="res-tag">review</span>
+  </div>
+
+  <div class="rr-section-title">Diabetic foot & preventive care</div>
+
+  <div class="resource">
+    <div>
+      <div class="res-title">Diabetic foot: prevalence, etiology, and best practice management</div>
+      <div class="res-source">Diabetes/Metabolism Research and Reviews · Armstrong et al.</div>
+      <div class="res-note">Comprehensive review of diabetic foot complications — neuropathy, ulceration, and amputation risk. The clinical case for why November's World Diabetes Day foot focus matters. Preventive care is self-respect.</div>
+    </div>
+    <span class="res-tag">clinical review</span>
+  </div>
+
+  <div class="rr-section-title">Books Rue would recommend</div>
+  <div class="book-grid">
+
+    <div class="book-card">
+      <div class="book-spine"></div>
+      <div class="book-title">The Body Keeps the Score</div>
+      <div class="book-author">Bessel van der Kolk</div>
+      <div class="book-note">The foundational text on somatic trauma storage. Why the body remembers what the mind tries to forget — and why foot-to-floor grounding is not trivial coping.</div>
+      <a class="book-link" href="https://amazon.com" target="_blank" rel="noopener">find on Amazon →</a>
+    </div>
+
+    <div class="book-card">
+      <div class="book-spine"></div>
+      <div class="book-title">Come As You Are</div>
+      <div class="book-author">Emily Nagoski</div>
+      <div class="book-note">The best science-based book on sexual response and body acceptance available in plain language. Rue recommends it to roughly one in three letter-writers.</div>
+      <a class="book-link" href="https://amazon.com" target="_blank" rel="noopener">find on Amazon →</a>
+    </div>
+
+    <div class="book-card">
+      <div class="book-spine"></div>
+      <div class="book-title">Anatomy Trains</div>
+      <div class="book-author">Thomas Myers</div>
+      <div class="book-note">The manual therapist's bible on myofascial meridians. Explains why tension in the plantar fascia shows up as neck pain three days later. For the body-curious reader who wants the map.</div>
+      <a class="book-link" href="https://amazon.com" target="_blank" rel="noopener">find on Amazon →</a>
+    </div>
+
+    <div class="book-card">
+      <div class="book-spine"></div>
+      <div class="book-title">Bonk: The Curious Coupling of Science and Sex</div>
+      <div class="book-author">Mary Roach</div>
+      <div class="book-note">What happens when a rigorous science journalist turns her attention to sex research. Funny, thorough, and genuinely illuminating. A model for how Rue tries to write.</div>
+      <a class="book-link" href="https://amazon.com" target="_blank" rel="noopener">find on Amazon →</a>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="xlink-strip">
+  <span class="xlink-label">explore more</span>
+  <a class="xlink" href="glossary.html">Glossary of Sole — terms behind the research</a>
+  <a class="xlink" href="foot-anatomy.html">Foot Anatomy 101</a>
+  <a class="xlink" href="callus-index.html">The Callus Index — topics Rue has answered</a>
+  <a class="xlink" href="explore.html">← back to explore</a>
+</div>
+
+<footer>
+  <a class="f-logo" href="index.html">uncalloused</a>
+  <div class="f-copy">uncalloused.com · educational only · all contributors 18+ · uncalloused media · affiliate links disclosed above</div>
+</footer>
+</body>
+</html>

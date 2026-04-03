@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--ink:#0e0d0b;--cream:#f0e8dc;--gold:#b08d6a;--goldl:#c9a07c;--muted:#c8c0b4;--border:rgba(232,226,217,0.12);--paper:#faf7f3;--paperink:#1a1510;}
+  body{background:var(--ink);color:#e8e2d9;font-family:'DM Mono',monospace;font-weight:300;overflow-x:hidden;}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:rgba(14,13,11,0.97);z-index:50;}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1rem;letter-spacing:0.15em;color:var(--cream);cursor:pointer;}
+  .nav-tabs{display:flex;}
+  .tab{background:none;border:none;font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--muted);cursor:pointer;padding:0.5rem 1.1rem;transition:color 0.2s;border-bottom:1px solid transparent;}
+  .tab:hover{color:#e8e2d9;}
+  .tab.active{color:var(--gold);border-bottom:1px solid var(--gold);}
+  .tab.cta{color:var(--gold);border:0.5px solid rgba(176,141,106,0.3);padding:0.4rem 1rem;margin-left:0.5rem;}
+  .tab.cta:hover{background:rgba(176,141,106,0.08);}
+
+  .page{display:none;animation:fi 0.35s ease;}
+  .page.active{display:block;}
+  @keyframes fi{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  .eyebrow{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(232,226,217,0.28);margin-bottom:1.25rem;cursor:default;user-select:none;pointer-events:none;}
+  .sec-label{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(176,141,106,0.5);margin-bottom:1rem;cursor:default;}
+
+  .btn-p{background:var(--gold);color:var(--ink);border:none;padding:0.85rem 2rem;font-family:'DM Mono',monospace;font-size:0.63rem;letter-spacing:0.13em;cursor:pointer;transition:all 0.2s;}
+  .btn-p:hover{background:var(--goldl);transform:translateY(-1px);}
+  .btn-g{background:transparent;color:var(--muted);border:0.5px solid rgba(232,226,217,0.2);padding:0.85rem 2rem;font-family:'DM Mono',monospace;font-size:0.63rem;letter-spacing:0.13em;cursor:pointer;transition:all 0.2s;}
+  .btn-g:hover{color:#e8e2d9;border-color:rgba(232,226,217,0.4);}
+  .btn-gold-outline{background:transparent;color:var(--gold);border:0.5px solid rgba(176,141,106,0.5);padding:0.85rem 2rem;font-family:'DM Mono',monospace;font-size:0.63rem;letter-spacing:0.13em;cursor:pointer;transition:all 0.2s;}
+  .btn-gold-outline:hover{background:rgba(176,141,106,0.08);}
+
+  .hero{padding:5rem 3rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;max-width:1200px;align-items:center;}
+  h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,4.5rem);line-height:1.0;color:var(--cream);}
+  h1 em{font-style:italic;color:var(--gold);display:block;}
+  .hero-sub{font-size:0.72rem;line-height:1.9;color:var(--muted);margin-top:1.75rem;border-left:1px solid rgba(176,141,106,0.4);padding-left:1.25rem;max-width:380px;}
+  .cta-row{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;}
+
+  .mini-cal{border:0.5px solid var(--border);padding:1.5rem;position:relative;}
+  .mini-cal::before{content:'2027';position:absolute;top:-0.6rem;left:1.25rem;background:var(--ink);padding:0 0.6rem;font-size:0.58rem;letter-spacing:0.2em;color:rgba(232,226,217,0.25);}
+  .mg{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;}
+  .mc{padding:0.6rem;border:0.5px solid rgba(232,226,217,0.06);position:relative;}
+  .mc.adult::after{content:'18+';position:absolute;top:3px;right:4px;font-size:0.45rem;color:var(--gold);opacity:0.65;}
+  .mn{font-size:0.5rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(232,226,217,0.3);margin-bottom:0.25rem;}
+  .mh{font-family:'Playfair Display',serif;font-size:0.63rem;line-height:1.3;color:#e8e2d9;font-style:italic;}
+  .ms{font-size:0.48rem;color:rgba(232,226,217,0.24);margin-top:0.2rem;}
+
+  .manifesto-strip{padding:3.5rem 3rem;border-top:0.5px solid var(--border);}
+  .mt{font-family:'Playfair Display',serif;font-size:clamp(1rem,2vw,1.3rem);line-height:1.9;color:#c8c0b4;max-width:680px;}
+  .mt strong{color:var(--cream);}
+  .mt em{color:var(--gold);font-style:italic;}
+
+  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+  .ci{padding:1.75rem;background:var(--ink);}
+  .ci-n{font-size:0.52rem;letter-spacing:0.15em;color:rgba(232,226,217,0.25);margin-bottom:0.7rem;cursor:default;}
+  .ci-t{font-family:'Playfair Display',serif;font-size:0.9rem;color:var(--cream);margin-bottom:0.45rem;font-style:italic;}
+  .ci-b{font-size:0.65rem;line-height:1.85;color:var(--muted);}
+
+  .pg-hero{padding:4rem 3rem 2.5rem;}
+  .pg-hero h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--cream);line-height:1.1;}
+  .pg-hero h2 em{font-style:italic;color:var(--gold);}
+  .pg-hero p{font-size:0.7rem;color:var(--muted);margin-top:0.85rem;max-width:540px;line-height:1.85;}
+
+  .months-list{padding:0 3rem 4rem;}
+  .month-row{display:grid;grid-template-columns:110px 1fr 1fr;gap:0;border-top:0.5px solid var(--border);padding:1.75rem 0;align-items:start;}
+  .month-row:last-child{border-bottom:0.5px solid var(--border);}
+  .mr-m{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);padding-top:0.1rem;}
+  .mr-t{font-family:'Playfair Display',serif;font-size:1rem;color:var(--cream);font-style:italic;margin-bottom:0.35rem;line-height:1.2;}
+  .mr-d{font-size:0.57rem;color:rgba(232,226,217,0.45);letter-spacing:0.07em;margin-bottom:0.5rem;}
+  .mr-b{font-size:0.65rem;line-height:1.8;color:var(--muted);max-width:320px;}
+  .mr-p{padding-left:1.75rem;}
+  .mr-pl{font-size:0.5rem;letter-spacing:0.13em;text-transform:uppercase;color:rgba(232,226,217,0.35);margin-bottom:0.4rem;}
+  .mr-pt{font-size:0.65rem;line-height:1.75;color:#a89e92;border-left:1px solid rgba(176,141,106,0.25);padding-left:1rem;font-style:italic;}
+  .badge{display:inline-block;font-size:0.47rem;letter-spacing:0.08em;padding:1px 6px;border:0.5px solid rgba(176,141,106,0.35);color:rgba(176,141,106,0.65);margin-left:0.4rem;vertical-align:middle;}
+  .badge-b{border-color:rgba(100,160,220,0.35);color:rgba(100,160,220,0.65);}
+
+  .shop-strip{margin:0 3rem 4rem;padding:2rem 2.25rem;border:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:2rem;}
+  .shop-strip p{font-size:0.7rem;line-height:1.8;color:var(--muted);max-width:480px;}
+  .shop-strip strong{color:var(--cream);}
+
+  .rue-hero{padding:4rem 3rem 0;}
+  .rue-hero h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--cream);line-height:1.1;}
+  .rue-hero h2 em{font-style:italic;color:var(--gold);}
+  .rue-split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:2.5rem 3rem 0;}
+  .rue-bio{background:var(--ink);padding:2.5rem;}
+  .rue-initial-lg{width:72px;height:72px;border-radius:50%;border:0.5px solid rgba(176,141,106,0.35);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:var(--gold);margin-bottom:1.5rem;}
+  .rue-bio-text{font-size:0.7rem;line-height:1.95;color:var(--muted);}
+  .rue-bio-text p{margin-bottom:1rem;}
+  .rue-bio-text p:last-child{margin-bottom:0;}
+  .rue-bio-text em{color:#c8c0b4;font-style:italic;}
+  .rue-rules{background:rgba(176,141,106,0.04);padding:2.5rem;}
+  .rue-rule{border-top:0.5px solid var(--border);padding:0.85rem 0;font-size:0.66rem;line-height:1.75;color:var(--muted);}
+  .rue-rule:first-of-type{border-top:none;padding-top:0;}
+  .rue-rule strong{color:var(--cream);}
+
+  .free-letter-wrap{margin:2.5rem 3rem 0;}
+  .letter-paper{background:var(--paper);padding:3rem;position:relative;}
+  .letter-paper::before{content:'the callus';position:absolute;top:1.25rem;left:3rem;font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(176,141,106,0.4);}
+  .letter-paper::after{content:"this month's free letter";position:absolute;top:1.25rem;right:3rem;font-family:'DM Mono',monospace;font-size:0.48rem;letter-spacing:0.1em;color:rgba(26,21,16,0.18);}
+  .lp-q{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--paperink);line-height:1.6;margin-bottom:1.75rem;padding-bottom:1.5rem;border-bottom:0.5px solid rgba(26,21,16,0.1);}
+  .lp-a{font-family:'Playfair Display',serif;font-size:1rem;line-height:1.9;color:rgba(26,21,16,0.85);margin-bottom:1.5rem;}
+  .lp-a p{margin-bottom:1rem;}
+  .lp-a p:last-child{margin-bottom:0;}
+  .lp-sig{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:rgba(176,141,106,0.65);font-style:italic;}
+
+  .locked-strip{margin:0 3rem;padding:1.5rem 2rem;background:rgba(176,141,106,0.04);border:0.5px solid rgba(176,141,106,0.13);display:flex;justify-content:space-between;align-items:center;gap:2rem;}
+  .locked-strip p{font-size:0.68rem;line-height:1.75;color:var(--muted);}
+  .locked-strip strong{color:var(--cream);}
+  .write-strip{margin:2rem 3rem 4rem;padding:2rem 2.25rem;border:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:2rem;}
+  .write-strip p{font-size:0.7rem;line-height:1.8;color:var(--muted);max-width:480px;}
+  .write-strip strong{color:var(--cream);}
+
+  .sub-hero{padding:5rem 3rem 3rem;max-width:700px;}
+  .sub-hero h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--cream);line-height:1.1;margin-bottom:1rem;}
+  .sub-hero h2 em{font-style:italic;color:var(--gold);}
+  .sub-hero p{font-size:0.72rem;line-height:1.9;color:var(--muted);}
+  .tiers{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:0 3rem 3rem;}
+  .tier{background:var(--ink);padding:2.5rem;}
+  .tier.featured{background:rgba(176,141,106,0.05);}
+  .tier-label{font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(232,226,217,0.35);margin-bottom:1rem;cursor:default;}
+  .tier-price{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--cream);margin-bottom:0.25rem;}
+  .tier-price-note{font-size:0.58rem;color:rgba(232,226,217,0.4);margin-bottom:1.5rem;}
+  .tier-items{margin-bottom:2rem;}
+  .tier-item{font-size:0.65rem;line-height:1.9;color:#a89e92;padding-left:1rem;position:relative;}
+  .tier-item::before{content:'—';position:absolute;left:0;color:rgba(176,141,106,0.35);}
+  .tier-item.on{color:#e8e2d9;}
+  .tier-item.on::before{color:var(--gold);}
+  .sub-note{margin:0 3rem 4rem;font-size:0.65rem;line-height:1.8;color:#a89e92;max-width:500px;}
+
+  footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+  .f-logo{font-family:'Playfair Display',serif;font-size:0.85rem;color:rgba(232,226,217,0.2);}
+  .f-copy{font-size:0.54rem;color:rgba(232,226,217,0.14);letter-spacing:0.06em;}
+
+  @media(max-width:760px){
+    nav{padding:1.25rem 1.5rem;}
+    .tab{padding:0.4rem 0.6rem;font-size:0.52rem;}
+    .hero{grid-template-columns:1fr;padding:3rem 1.5rem 2rem;gap:2rem;}
+    .pg-hero,.rue-hero,.sub-hero,.manifesto-strip,.months-list,.free-letter-wrap{padding-left:1.5rem;padding-right:1.5rem;}
+    .rue-split,.tiers,.three-col{grid-template-columns:1fr;margin-left:0;margin-right:0;}
+    .month-row{grid-template-columns:1fr;gap:0.75rem;}
+    .mr-p{padding-left:0;}
+    .shop-strip,.write-strip,.locked-strip{flex-direction:column;margin-left:0;margin-right:0;}
+    footer{padding:1.75rem 1.5rem;flex-direction:column;gap:0.6rem;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" onclick="showPage('home',document.querySelectorAll('.tab')[0])">uncalloused</div>
+  <div class="nav-tabs">
+    <button class="tab active" onclick="showPage('home',this)">home</button>
+    <button class="tab" onclick="showPage('calendar',this)">the calendar</button>
+    <button class="tab" onclick="showPage('rue',this)">meet rue</button>
+    <button class="tab cta" onclick="showPage('subscribe',this)">subscribe</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">foot culture · body truth · soft where it counts</div>
+      <h1>keep<br>feeling<br><em>anyway.</em></h1>
+      <p class="hero-sub">A callus forms where something rubbed long enough. It protects you. It also deadens you. Uncalloused is for people who noticed that — and decided to stay tender anyway.</p>
+      <div class="cta-row">
+        <button class="btn-p" onclick="showPage('calendar',document.querySelectorAll('.tab')[1])">see the 2027 calendar</button>
+        <button class="btn-g" onclick="showPage('rue',document.querySelectorAll('.tab')[2])">meet rue ↗</button>
+      </div>
+    </div>
+    <div id="home-hero-img" style="overflow:hidden;position:relative;background:#1a1510;min-height:480px;"></div>
+  </div>
+
+  <div class="manifesto-strip">
+    <p class="mt">feet carry <strong>every journey</strong> — literal and emotional. <em>fleshy, furry, or forged from titanium.</em> this is a place where the body is taken seriously, which means it is also a place where the body is taken lightly, ribbed, celebrated, grieved. <strong>kinky is accepted. tenderness is required.</strong> and Rue is always on your side.</p>
+  </div>
+
+  <div class="three-col">
+    <div class="ci"><div class="ci-n">the calendar</div><div class="ci-t">Real feet. No filters.</div><div class="ci-b">twelve months of unretouched foot culture — holidays, adaptive bodies, mental-health cues, and a few clearly-labeled grown-ups-only spreads. print-on-demand, ships worldwide.</div></div>
+    <div class="ci"><div class="ci-n">the writing</div><div class="ci-t">Honest about the body.</div><div class="ci-b">essays, fiction, parafiction, and Rue's correspondence — all on Substack. the kind of writing that makes you uncomfortable and then makes you think. that's the point.</div></div>
+    <div class="ci"><div class="ci-n">the column</div><div class="ci-t">Ask Rue anything.</div><div class="ci-b">she answers what your doctor, therapist, and HR department won't. shame-free, science-curious, occasionally irreverent. one free letter here every month. the rest live on Substack.</div></div>
+  </div>
+</div>
+
+<!-- CALENDAR -->
+<div id="page-calendar" class="page">
+  <div class="pg-hero">
+    <div class="sec-label">the 2027 calendar</div>
+    <h2>twelve months.<br>twelve feet <em>forward.</em></h2>
+    <p>every spread pairs a verified foot observance with a photo prompt and a mental-health cue. prosthetics woven throughout. adult months marked 18+. real, unretouched feet only.</p>
+  </div>
+  <div class="months-list">
+    <div class="month-row"><div class="mr-m">January</div><div><div class="mr-t">First Foot Day + Measure Your Feet Day</div><div class="mr-d">Jan 1 · Jan 23</div><div class="mr-b">luck-bringing footsteps to start the year, then know your size. ground yourself in reality — no wrong measurements.</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">soft tape from heel to toe on a velvet chaise. mischievous grin. "no wrong measurements in self-acceptance."</div></div></div>
+    <div class="month-row"><div class="mr-m">February</div><div><div class="mr-t">Valen-Toes Day <span class="badge">our own</span></div><div class="mr-d">Feb 12</div><div class="mr-b">we're claiming this one. send foot pics, not roses. love yourself from the tips up.</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">candlelit bubble bath; toes in foam wearing tiny red heart stickers, rose petals drifting.</div></div></div>
+    <div class="month-row"><div class="mr-m">March</div><div><div class="mr-t">Shoe the World Day + Rotten Sneaker Contest <span class="badge">POP Month</span></div><div class="mr-d">Mar 15 · late March · all month: Prosthetics & Orthotics Month</div><div class="mr-b">charity meets chaos. donate a pair, celebrate the stinkiest shoes alive. "Show Us Your Hardware" — metal meets metatarsal.</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">pump on one foot, battered flip-flop on the other over a donation box. / blade runner selfie week.</div></div></div>
+    <div class="month-row"><div class="mr-m">April</div><div><div class="mr-t">Feet Week + Mani-Pedi Day + Limb Loss Awareness <span class="badge">18+</span> <span class="badge badge-b">LLLDAM</span></div><div class="mr-d">Apr 17–23 · Apr 25 · all month</div><div class="mr-b">the month Uncalloused widens the tent furthest. small rituals, big calm. 10% of judge-pass revenue to the Amputee Coalition.</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">two friends trade foot massages, neon nails, bubbly sweating nearby — googly-eye art that stares back at stress.</div></div></div>
+    <div class="month-row"><div class="mr-m">May</div><div><div class="mr-t">No Socks Day · High Heel Day · Foot Fetish Day <span class="badge">18+</span></div><div class="mr-d">May 8 · May 20 · May 29</div><div class="mr-b">this month is a playground. barefoot freedom to fetish friday. a bold heel is a grounding ritual — that's not vanity, that's science.</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">stiletto lowering onto overdue bills; confetti cannon fires. "crushing debt. boosting confidence."</div></div></div>
+    <div class="month-row"><div class="mr-m">June</div><div><div class="mr-t">Go Barefoot Day · Flip-Flop Day · Toe Day <span class="badge">18+</span></div><div class="mr-d">Jun 1 · 3rd Fri · Jun 10</div><div class="mr-b">feel the grass, breathe, reset. sensory grounding cheaper than your shrink.</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">bare feet in cool grass beside a discarded tie and blazer. "grounding therapy: cheaper than my shrink."</div></div></div>
+    <div class="month-row"><div class="mr-m">July</div><div><div class="mr-t">Walk on Stilts Day</div><div class="mr-d">Jul 27</div><div class="mr-b">elevate your perspective and your calves. circus energy required.</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">beach boardwalk; legs on stilts towering over sand-buried friends whose toes wave white flags.</div></div></div>
+    <div class="month-row"><div class="mr-m">August</div><div><div class="mr-t">Wiggle Your Toes Day + I Love My Feet Day</div><div class="mr-d">Aug 6 · Aug 17</div><div class="mr-b">movement micro-break plus full-on foot self-love. mirror work for the parts that carry you everywhere.</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">mirror beneath arch reflects a cheeky smile painted on the sole with lipstick. "mirror work for the parts that carry you."</div></div></div>
+    <div class="month-row"><div class="mr-m">September</div><div><div class="mr-t">World Reflexology Week + Foot Drop Awareness</div><div class="mr-d">Last full week · date varies</div><div class="mr-b">pressure-point stress release. the AFO angle arrives — "gravity? never heard of her."</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">partner traces pressure-point map with a feather. / stilettos dangling from an AFO brace.</div></div></div>
+    <div class="month-row"><div class="mr-m">October</div><div><div class="mr-t">Podiatry Day · Stinky Feet Day · Toe Sucking Day <span class="badge">18+</span></div><div class="mr-d">Oct 8 · Oct 28 · Oct 22</div><div class="mr-b">clinically legit by day 8; peak funk on the 28th; kink on the 22nd. "odor is just personality doing cardio."</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">sweat-soaked socks in a glam mason jar. / dark velvet; feet in lace anklets hold a wine bottle. "uncork your kinks responsibly."</div></div></div>
+    <div class="month-row"><div class="mr-m">November</div><div><div class="mr-t">World Diabetes Day · International Prosthetics Day <span class="badge badge-b">IPO Day</span></div><div class="mr-d">Nov 14 · Nov 5</div><div class="mr-b">the calendar's centerfold month. top prosthetic-foot contest winner runs here. preventive care is self-respect.</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">bare feet beside the blue diabetes circle, quiet and dignified. / the contest's best bionic-flair winner, full spread.</div></div></div>
+    <div class="month-row"><div class="mr-m">December</div><div><div class="mr-t">National Sock Day + Put On Your Own Shoes Day</div><div class="mr-d">Dec 4 · Dec 6</div><div class="mr-b">cozy pairs, then independence. still a perfect pair when the spirits match.</div></div><div class="mr-p"><div class="mr-pl">photo prompt</div><div class="mr-pt">mismatched holiday socks by the hearth, each holding a mini-flask. "still a perfect pair when the spirits match."</div></div></div>
+  </div>
+  <div class="shop-strip">
+    <p><strong>pre-orders open now.</strong> $44 · print-on-demand · ships worldwide · one free judge pass included · statements read "Uncalloused Media."</p>
+    <button class="btn-p">pre-order — $44 →</button>
+  </div>
+</div>
+
+<!-- MEET RUE -->
+<div id="page-rue" class="page">
+  <div class="rue-hero">
+    <div class="sec-label">the advice column · the callus</div>
+    <h2>meet <em>Rue.</em></h2>
+  </div>
+  <div class="rue-split">
+    <div class="rue-bio">
+      <div class="rue-initial-lg">R</div>
+      <div class="rue-bio-text">
+        <p>Rue has walked every road — some of them barefoot, some in borrowed shoes, at least one in a cast. She holds a soft spot for weird questions, olfactory science, and the kind of coping rituals that don't make it into wellness magazines.</p>
+        <p>She answers what your podiatrist won't, what your therapist circles around, and what your HR department would prefer you never asked. She does this with shame-free rigor, occasional irreverence, and the conviction that <em>nothing is unspeakable if it's asked honestly.</em></p>
+        <p>She is not your doctor. She is not your HR rep. She is, however, always on your side.</p>
+        <p>One letter appears here every month, free. The rest — and the ability to write to her directly — live on Substack.</p>
+      </div>
+    </div>
+    <div class="rue-rules">
+      <div class="sec-label">how the callus works</div>
+      <div class="rue-rule"><strong>Send her something real.</strong> Anonymous submissions welcome. No name required. Just the question that's been sitting in you.</div>
+      <div class="rue-rule"><strong>She reads everything.</strong> She responds to what she can, in the order that feels right. Not every letter gets a public answer.</div>
+      <div class="rue-rule"><strong>Adult questions get adult answers.</strong> Labeled clearly. No shame either direction.</div>
+      <div class="rue-rule"><strong>She is educational, not clinical.</strong> Rue is not a licensed provider. She'll tell you when something needs a real doctor.</div>
+      <div class="rue-rule"><strong>Rue is a pen name.</strong> The person behind her has credentials she's happy to discuss privately. Write to <a href="mailto:uncalloused@protonmail.com?subject=Credentials inquiry" style="color:var(--gold);text-decoration:none;border-bottom:0.5px solid rgba(176,141,106,0.3);">uncalloused@protonmail.com</a> if you're a journalist, sponsor, or clinician. The column stays anonymous. The person doesn't have to.</div>
+      <div class="rue-rule"><strong>The full archive is on Substack.</strong> Paid subscribers get every letter and the ability to submit directly.</div>
+    </div>
+  </div>
+
+  <div class="free-letter-wrap">
+    <div class="sec-label" style="margin-bottom:1.25rem;">this month's free letter</div>
+    <div class="letter-paper" id="rue-letter-paper">
+      <div class="lp-q" id="rue-letter-q" style="min-height:2rem;"></div>
+      <div class="lp-a" id="rue-letter-a"></div>
+      <div class="lp-sig" id="rue-letter-sig"></div>
+    </div>
+  </div>
+
+  <div class="locked-strip">
+    <p><strong>More letters live on Substack.</strong> Paid subscribers get the full Callus archive and the ability to write to Rue directly. Free subscribers get essays, fiction, and this page — updated every month.</p>
+    <button class="btn-gold-outline" onclick="showPage('subscribe',document.querySelectorAll('.tab')[3])">read more · subscribe →</button>
+  </div>
+
+  <div class="write-strip">
+    <p><strong>have a question for Rue?</strong> anonymous submissions welcome. adult questions accepted. she reads everything.</p>
+    <a class="btn-p" href="/cdn-cgi/l/email-protection#53263d30323f3f3c262036371323213c273c3d3e323a3f7d303c3e6c202631393630276e1736322173012636">write to Rue →</a>
+  </div>
+</div>
+
+<!-- SUBSCRIBE -->
+<div id="page-subscribe" class="page">
+  <div class="sub-hero">
+    <div class="sec-label">join uncalloused</div>
+    <h2>stay <em>tender.</em></h2>
+    <p>essays, fiction, and Rue's Desk — all on Substack. free subscribers get the essays and fiction. paid subscribers get Rue's Desk artifacts, the full Callus archive, and Rue's direct inbox.</p>
+  </div>
+  <div class="tiers">
+    <div class="tier">
+      <div class="tier-label">free subscriber</div>
+      <div class="tier-price">$0</div>
+      <div class="tier-price-note">always free</div>
+      <div class="tier-items">
+        <div class="tier-item on">In the Flesh essays</div>
+        <div class="tier-item on">fiction drops & excerpts</div>
+        <div class="tier-item on">one free Callus letter per month</div>
+        <div class="tier-item on">calendar early-notice emails</div>
+        <div class="tier-item">The Dropbox artifacts</div>
+        <div class="tier-item">full Callus archive</div>
+        <div class="tier-item">direct submission to Rue</div>
+      </div>
+      <button class="btn-g">subscribe free →</button>
+    </div>
+    <div class="tier featured">
+      <div class="tier-label">paid subscriber</div>
+      <div class="tier-price">$7</div>
+      <div class="tier-price-note">per month · or $60/year</div>
+      <div class="tier-items">
+        <div class="tier-item on">everything in free</div>
+        <div class="tier-item on">Rue's Desk — artifacts, zines, in-world objects</div>
+        <div class="tier-item on">full Callus archive</div>
+        <div class="tier-item on">direct submission to Rue</div>
+        <div class="tier-item on">15% off the annual calendar</div>
+        <div class="tier-item on">early access to the photo contest gallery</div>
+      </div>
+      <button class="btn-p">subscribe — $7/month →</button>
+    </div>
+  </div>
+  <div class="sub-note">no algorithms. no ads. no sponsored content. uncalloused is reader-funded. the calendar funds the models and the prizes. the subscriptions fund the writing. that's the whole model.</div>
+</div>
+
+<footer>
+  <div class="f-logo">uncalloused</div>
+  <div class="f-copy">uncalloused.com · educational only · all contributors 18+ · uncalloused media · 2026</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function showPage(id,tab){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  tab.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Fetch Rue's current letter from rue-letter.json
+// To update: edit rue-letter.json in GitHub, commit. Page updates automatically.
+async function loadRueLetter() {
+  const q = document.getElementById('rue-letter-q');
+  const a = document.getElementById('rue-letter-a');
+  const sig = document.getElementById('rue-letter-sig');
+  if (!q || !a || !sig) return;
+  try {
+    const res = await fetch('rue-letter.json?v=' + Date.now());
+    const letter = await res.json();
+    // Month label
+    const paper = document.getElementById('rue-letter-paper');
+    if (paper && letter.month) {
+      paper.style.setProperty('--letter-month', '"' + letter.month + '"');
+      const monthLabel = document.createElement('div');
+      monthLabel.style.cssText = 'position:absolute;top:1.25rem;right:3rem;font-family:DM Mono,monospace;font-size:0.48rem;letter-spacing:0.1em;color:rgba(26,21,16,0.18);';
+      monthLabel.textContent = letter.month;
+      paper.appendChild(monthLabel);
+    }
+    // Question
+    q.textContent = '\u201C' + letter.question + '\u201D';
+    // Answer paragraphs
+    a.innerHTML = letter.answer.map(p => '<p>' + p + '</p>').join('');
+    // Signature
+    sig.textContent = letter.signature || '\u2014 rue';
+  } catch(e) {
+    // Fallback if JSON fails — show a gentle placeholder
+    q.textContent = 'Rue\u2019s letter for this month is on its way.';
+    sig.textContent = '\u2014 rue';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadRueLetter();
+
+  // Rotating hero image
+  const HERO_POOL = [
+    'images/sock-monk.png',
+    'images/amir-sole-to-sole.png',
+    'images/amir-toes-ink.png',
+    'images/amir-beach-watercolor.png',
+    'images/holi-sneakers.png',
+    'images/studio-stiletto.png',
+    'images/professor.png',
+    'images/bath-triptych.png',
+    'images/stocking-ad.png',
+    'images/stocking-ad-v2.png',
+    'images/hiking-sandal.png',
+    'images/rainbow-socks.png',
+    'images/grocery-wedge.png',
+    'images/rhinestone-heels.png'
+  ];
+  const slot = document.getElementById('home-hero-img');
+  if (slot) {
+    const src = HERO_POOL[Math.floor(Math.random() * HERO_POOL.length)];
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = '';
+    img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 0.7s ease;position:absolut

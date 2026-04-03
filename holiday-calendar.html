@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Foot Holiday Calendar — Uncalloused</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .cal-intro{padding:4rem 3rem 2rem;max-width:640px;}
+  .cal-intro p{font-size:0.7rem;line-height:1.85;color:var(--muted);margin-top:1rem;}
+
+  .months{padding:0 3rem 4rem;}
+  .month-block{border-top:0.5px solid var(--border);padding:2rem 0;}
+  .month-block:last-child{border-bottom:0.5px solid var(--border);}
+  .month-name{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--cream);margin-bottom:1.25rem;font-style:italic;}
+
+  .observances{display:flex;flex-direction:column;gap:0.75rem;}
+  .obs{display:grid;grid-template-columns:90px 1fr auto;gap:1rem;align-items:start;font-size:0.65rem;line-height:1.7;}
+  .obs-date{color:var(--gold);font-size:0.6rem;letter-spacing:0.05em;padding-top:0.1rem;}
+  .obs-name{color:var(--cream);}
+  .obs-note{color:var(--muted);margin-top:0.15rem;font-size:0.62rem;}
+  .obs-tag{font-size:0.48rem;letter-spacing:0.1em;padding:2px 7px;border:0.5px solid rgba(176,141,106,0.35);color:rgba(176,141,106,0.7);white-space:nowrap;align-self:start;}
+  .obs-tag.adult{border-color:rgba(220,100,100,0.3);color:rgba(220,100,100,0.7);}
+  .obs-tag.prosthetics{border-color:rgba(100,160,220,0.35);color:rgba(100,160,220,0.7);}
+  .obs-tag.health{border-color:rgba(120,180,120,0.35);color:rgba(120,180,120,0.7);}
+  .obs-tag.ours{border-color:rgba(176,141,106,0.5);color:rgba(176,141,106,0.85);}
+
+  .glossary-link{font-size:0.6rem;color:var(--gold);text-decoration:none;border-bottom:0.5px solid rgba(176,141,106,0.3);}
+  .glossary-link:hover{border-color:var(--gold);}
+
+  @media(max-width:760px){
+    .months{padding:0 1.5rem 3rem;}
+    .obs{grid-template-columns:70px 1fr;gap:0.5rem;}
+    .obs-tag{display:none;}
+    .cal-intro{padding:3rem 1.5rem 1.5rem;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">uncalloused</a>
+  <div class="nav-tabs">
+    <a class="nav-tab" href="index.html">home</a>
+    <a class="nav-tab" href="index.html#calendar">the calendar</a>
+    <a class="nav-tab" href="index.html#rue">meet rue</a>
+    <a class="nav-tab active" href="explore.html">explore</a>
+    <a class="nav-tab cta" href="index.html#subscribe">subscribe</a>
+  </div>
+</nav>
+
+<div class="cal-intro">
+  <div class="sec-label">foot culture · reference</div>
+  <h2>The Foot Holiday <em>Calendar</em></h2>
+  <p>Every verified foot observance, meme date, awareness month, and cultural moment worth knowing — organized by month. Bookmark this. Return when something comes up. The product calendar features these; this page is the reference layer behind it.</p>
+  <p style="margin-top:0.75rem;">Terms marked with a <a class="glossary-link" href="glossary.html">·g·</a> have entries in the <a class="glossary-link" href="glossary.html">Glossary of Sole</a>.</p>
+</div>
+
+<div class="months">
+
+  <div class="month-block">
+    <div class="month-name">January</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">Jan 1</div><div><div class="obs-name">National First Foot Day</div><div class="obs-note">Scottish tradition — the first person to cross a threshold in the new year brings luck. The foot that enters first matters.</div></div><div class="obs-tag">verified</div></div>
+      <div class="obs"><div class="obs-date">Jan 23</div><div><div class="obs-name">National Measure Your Feet Day</div><div class="obs-note">Literal self-knowledge. Most adults haven't measured their feet since childhood. Sizing affects posture, gait, and joint health.</div></div><div class="obs-tag health">health</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">February</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">Feb 12</div><div><div class="obs-name">Valen-Toes Day</div><div class="obs-note">Ours. We claimed it. The pre-Valentine warm-up for people who send foot pics instead of roses. Love yourself from the tips up.</div></div><div class="obs-tag ours">our own</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">March</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">All month</div><div><div class="obs-name">POP Month — Prosthetics, Orthotics & Pedorthics</div><div class="obs-note">Annual awareness month for the professionals and communities working with adaptive devices. See also: <a class="glossary-link" href="glossary.html">orthotics</a>, <a class="glossary-link" href="limb-difference.html">Limb & Difference</a>.</div></div><div class="obs-tag prosthetics">prosthetics</div></div>
+      <div class="obs"><div class="obs-date">Mar 15</div><div><div class="obs-name">National Shoe the World Day</div><div class="obs-note">Charity-focused. Donate a spare pair. The foot that gives a shoe carries as much meaning as the foot that receives one.</div></div><div class="obs-tag verified">verified</div></div>
+      <div class="obs"><div class="obs-date">Late March</div><div><div class="obs-name">Odor-Eaters National Rotten Sneaker Contest</div><div class="obs-note">50-year-old media event. Kids compete at Ripley's Times Square for stinkiest shoes. Date shifts annually — last week of March. See: <a class="glossary-link" href="glossary.html">bromodosis</a>.</div></div><div class="obs-tag verified">verified</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">April</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">All month</div><div><div class="obs-name">National Foot Health Awareness Month</div><div class="obs-note">Recognized by the APMA. Odor control, nail care, diabetic foot, and preventive screening are core themes. See: <a class="glossary-link" href="foot-anatomy.html">Foot Anatomy 101</a>.</div></div><div class="obs-tag health">health</div></div>
+      <div class="obs"><div class="obs-date">All month</div><div><div class="obs-name">Limb Loss & Limb Difference Awareness Month (LLLDAM)</div><div class="obs-note">The month Uncalloused widens the tent furthest. 10% of judge-pass revenue donated to Amputee Coalition peer support. See: <a class="glossary-link" href="limb-difference.html">Limb & Difference</a>.</div></div><div class="obs-tag prosthetics">prosthetics</div></div>
+      <div class="obs"><div class="obs-date">Apr 17–23</div><div><div class="obs-name">National Feet Week (UK)</div><div class="obs-note">Annual UK awareness week. Podiatry clinics, NHS foot screenings, and public education campaigns.</div></div><div class="obs-tag health">health</div></div>
+      <div class="obs"><div class="obs-date">Apr 20</div><div><div class="obs-name">National Footjob Day</div><div class="obs-note">Urban Dictionary sourced. Internet-only. Adult humor only — not on mainstream calendars. We note it; we don't feature it in the product calendar.</div></div><div class="obs-tag adult">18+</div></div>
+      <div class="obs"><div class="obs-date">Apr 25</div><div><div class="obs-name">National Mani-Pedi Day</div><div class="obs-note">Small rituals, big calm. The psychological case for routine foot care as a mental-health anchor.</div></div><div class="obs-tag verified">verified</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">May</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">May 3</div><div><div class="obs-name">National Two Different Colored Shoes Day</div><div class="obs-note">Playful neurodivergent energy. Small novelties refresh neural patterns.</div></div><div class="obs-tag verified">verified</div></div>
+      <div class="obs"><div class="obs-date">May 8</div><div><div class="obs-name">No Socks Day</div><div class="obs-note">Barefoot liberation before the summer formally begins.</div></div><div class="obs-tag verified">verified</div></div>
+      <div class="obs"><div class="obs-date">May 15</div><div><div class="obs-name">National Nylon Stockings Day</div><div class="obs-note">Commemorates the 1940 commercial release of nylon stockings. Fashion, scarcity, and the erotics of fabric.</div></div><div class="obs-tag verified">verified</div></div>
+      <div class="obs"><div class="obs-date">May 20</div><div><div class="obs-name">National High Heel Day</div><div class="obs-note">First observed 2021. Elevation activates calves; alters self-perception. A bold heel can be a grounding ritual — that's not vanity, that's science. See: <a class="glossary-link" href="foot-anatomy.html">posture and gait</a>.</div></div><div class="obs-tag verified">verified</div></div>
+      <div class="obs"><div class="obs-date">May 29</div><div><div class="obs-name">Foot Fetish Day</div><div class="obs-note">Community-observed. See: <a class="glossary-link" href="glossary.html">podophilia</a>, <a class="glossary-link" href="glossary.html">retifism</a>.</div></div><div class="obs-tag adult">18+</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">June</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">Jun 1</div><div><div class="obs-name">Go Barefoot Day + National Nail Polish Day</div><div class="obs-note">Two holidays, one day. Sensory grounding research links skin-to-earth contact with reduced inflammation. See: <a class="glossary-link" href="glossary.html">earthing</a>.</div></div><div class="obs-tag verified">verified</div></div>
+      <div class="obs"><div class="obs-date">3rd Friday</div><div><div class="obs-name">Flip-Flop Day</div><div class="obs-note">Tropical Smoothie Café promo origin. The slap rhythm as incidental sound therapy.</div></div><div class="obs-tag verified">verified</div></div>
+      <div class="obs"><div class="obs-date">Jun 10</div><div><div class="obs-name">Toe Sucking Day (meme)</div><div class="obs-note">2019 Urban Dictionary origin. Amplified by foot-fetish forums annually. Internet folklore, not a formal observance. See also: October 22 version. See: <a class="glossary-link" href="glossary.html">olfactophilia</a>.</div></div><div class="obs-tag adult">18+</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">July</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">Jul 27</div><div><div class="obs-name">Walk on Stilts Day</div><div class="obs-note">Circus energy. Perspective lifts mood — sometimes literally. Elevation alters proprioception and spatial self-perception.</div></div><div class="obs-tag verified">verified</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">August</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">Aug 6</div><div><div class="obs-name">Wiggle Your Toes Day</div><div class="obs-note">Movement micro-break. Toe flexion activates the plantar fascia and encourages lymphatic flow. See: <a class="glossary-link" href="foot-anatomy.html">plantar fascia</a>.</div></div><div class="obs-tag health">health</div></div>
+      <div class="obs"><div class="obs-date">Aug 17</div><div><div class="obs-name">I Love My Feet Day</div><div class="obs-note">Full-on foot self-love. Mirror work for the parts that carry you everywhere — biological or bionic.</div></div><div class="obs-tag verified">verified</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">September</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">Date varies</div><div><div class="obs-name">National Foot Drop Awareness Day</div><div class="obs-note">Focus on bracing and AFO technology. The stiletto-on-an-AFO prompt lives here. "Gravity? Never heard of her."</div></div><div class="obs-tag health">health</div></div>
+      <div class="obs"><div class="obs-date">Last full week</div><div><div class="obs-name">World Reflexology Week</div><div class="obs-note">Clinical trials show pressure-point therapy reduces anxiety scores measurably. See: <a class="glossary-link" href="foot-anatomy.html">reflexology zones</a>, <a class="glossary-link" href="reading-room.html">research links</a>.</div></div><div class="obs-tag health">health</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">October</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">Oct 8</div><div><div class="obs-name">International Podiatry Day</div><div class="obs-note">Clinically legitimate. Podiatrists are the unsung preventive care specialists of the lower extremity.</div></div><div class="obs-tag health">health</div></div>
+      <div class="obs"><div class="obs-date">Oct 22</div><div><div class="obs-name">Toe Sucking Day (crowdsourced)</div><div class="obs-note">More common version on national-day sites. See June 10 for the meme origin. We feature this date in the product calendar.</div></div><div class="obs-tag adult">18+</div></div>
+      <div class="obs"><div class="obs-date">Oct 28</div><div><div class="obs-name">National Stinky Feet Day</div><div class="obs-note">The only day that literally celebrates malodorous feet. "Odor is just personality doing cardio." See: <a class="glossary-link" href="glossary.html">bromodosis</a>, <a class="glossary-link" href="glossary.html">olfactophilia</a>.</div></div><div class="obs-tag verified">verified</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">November</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">Nov 5</div><div><div class="obs-name">International Prosthetics & Orthotics Day (IPO Day)</div><div class="obs-note">The calendar's centerfold month. The contest's Best Bionic Flair winner features here. See: <a class="glossary-link" href="limb-difference.html">Limb & Difference</a>.</div></div><div class="obs-tag prosthetics">prosthetics</div></div>
+      <div class="obs"><div class="obs-date">Nov 14</div><div><div class="obs-name">World Diabetes Day — diabetic foot spotlight</div><div class="obs-note">Circulation, neuropathy, and routine foot checks. Preventive care is self-respect. See: <a class="glossary-link" href="reading-room.html">diabetic foot research</a>.</div></div><div class="obs-tag health">health</div></div>
+    </div>
+  </div>
+
+  <div class="month-block">
+    <div class="month-name">December</div>
+    <div class="observances">
+      <div class="obs"><div class="obs-date">Dec 4</div><div><div class="obs-name">National Sock Day</div><div class="obs-note">Cozy pairs. Still a perfect pair when the spirits match.</div></div><div class="obs-tag verified">verified</div></div>
+      <div class="obs"><div class="obs-date">Dec 6</div><div><div class="obs-name">Put On Your Own Shoes Day</div><div class="obs-note">Independence booster. For kids learning autonomy, or adults who've had too much eggnog.</div></div><div class="obs-tag verified">verified</div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="xlink-strip">
+  <span class="xlink-label">explore more</span>
+  <a class="xlink" href="glossary.html">Glossary of Sole — terms behind the holidays</a>
+  <a class="xlink" href="foot-anatomy.html">Foot Anatomy 101</a>
+  <a class="xlink" href="reading-room.html">The Reading Room — research links</a>
+  <a class="xlink" href="explore.html">← back to explore</a>
+</div>
+
+<footer>
+  <a class="f-logo" href="index.html">uncalloused</a>
+  <div class="f-copy">uncalloused.com · educational only · all contributors 18+ · uncalloused media</div>
+</footer>
+</body>
+</html>

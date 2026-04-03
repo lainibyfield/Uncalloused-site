@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sole & Culture — Uncalloused</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.split-hero{display:grid;grid-template-columns:1fr 1fr;min-height:400px;}
+.split-hero-text{padding:4rem 3rem;display:flex;flex-direction:column;justify-content:flex-end;}
+.split-hero-text p{font-size:0.7rem;color:var(--muted);margin-top:1rem;max-width:420px;line-height:1.85;}
+.articles{padding:0 3rem 4rem;}
+.article-list{margin-top:2rem;}
+.article-row{display:grid;grid-template-columns:60px 1fr auto;gap:1.5rem;border-top:0.5px solid var(--border);padding:1.5rem 0;align-items:start;}
+.article-row:last-child{border-bottom:0.5px solid var(--border);}
+.art-num{font-size:0.55rem;color:rgba(232,226,217,0.2);padding-top:0.2rem;letter-spacing:0.1em;}
+.art-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--cream);font-style:italic;margin-bottom:0.35rem;line-height:1.2;}
+.art-desc{font-size:0.62rem;line-height:1.8;color:var(--muted);}
+.art-status{font-size:0.48rem;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;border:0.5px solid var(--border);color:var(--dim);white-space:nowrap;align-self:start;}
+.art-status.coming{border-color:rgba(176,141,106,0.3);color:rgba(176,141,106,0.6);}
+.art-status.live{border-color:rgba(120,180,120,0.4);color:rgba(120,180,120,0.7);}
+@media(max-width:760px){.split-hero{grid-template-columns:1fr;}.split-hero-text{padding:3rem 1.5rem 2rem;}.articles{padding:0 1.5rem 3rem;}.article-row{grid-template-columns:40px 1fr;}.art-status{display:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">uncalloused</a>
+  <div class="nav-tabs">
+    <a class="nav-tab" href="index.html">home</a>
+    <a class="nav-tab" href="index.html#calendar">the calendar</a>
+    <a class="nav-tab" href="index.html#rue">meet rue</a>
+    <a class="nav-tab active" href="explore.html">explore</a>
+    <a class="nav-tab cta" href="index.html#subscribe">subscribe</a>
+  </div>
+</nav>
+
+<div class="split-hero">
+  <div class="img-slot img-slot-tall" data-pool="sole-culture"></div>
+  <div class="split-hero-text">
+    <div class="sec-label">foot culture</div>
+    <h2>Sole & <em>Culture</em></h2>
+    <p>History, anthropology, shame, beauty ritual across civilizations. The foot in sacred art, in colonial violence, in bridal ceremony, in fetish archive. The long view. The uncomfortable one.</p>
+  </div>
+</div>
+
+<div class="articles">
+  <div class="sec-label" style="margin-top:2.5rem;">essays in this section</div>
+  <div class="article-list">
+    <div class="article-row"><div class="art-num">01</div><div><div class="art-title">Feet together: the womb theory</div><div class="art-desc">Sacred geometry, maternal symbolism, and why soles touching means something older than language. The most original angle in the Uncalloused library.</div></div><div class="art-status coming">coming</div></div>
+    <div class="article-row"><div class="art-num">02</div><div><div class="art-title">The scandalous foot — a history of exposure</div><div class="art-desc">Ankle, instep, sole. What uncovering each has meant across centuries, cultures, and class lines.</div></div><div class="art-status coming">coming</div></div>
+    <div class="article-row"><div class="art-num">03</div><div><div class="art-title">Lotus feet and the weight of beauty</div><div class="art-desc">Foot binding, Han Chinese tradition, trauma and pride. The history most Western sources get wrong.</div></div><div class="art-status coming">coming</div></div>
+    <div class="article-row"><div class="art-num">04</div><div><div class="art-title">Sole to sole — feet in sacred art</div><div class="art-desc">From Buddhist iconography to the Song of Solomon. What the foot means when it appears in holy text and image.</div></div><div class="art-status coming">coming</div></div>
+    <div class="article-row"><div class="art-num">05</div><div><div class="art-title">The barefoot woman</div><div class="art-desc">What uncovered feet have signaled across centuries — freedom, poverty, sexuality, defiance. Never just one thing.</div></div><div class="art-status coming">coming</div></div>
+    <div class="article-row"><div class="art-num">06</div><div><div class="art-title">Geisha, tabi socks, and the lie we tell about foot binding</div><div class="art-desc">Correcting the most common misattribution in foot history. Geisha never bound their feet. That's not the interesting part.</div></div><div class="art-status coming">coming</div></div>
+    <div class="article-row"><div class="art-num">07</div><div><div class="art-title">High heels: a masculine origin story</div><div class="art-desc">The history nobody tells. Before stilettos were feminine, they were cavalry.</div></div><div class="art-status coming">coming</div></div>
+    <div class="article-row"><div class="art-num">08</div><div><div class="art-title">Henna on the sole</div><div class="art-desc">South Asian bridal foot art and what it means. Joy, calm, and the politics of adornment.</div></div><div class="art-status coming">coming</div></div>
+    <div class="article-row"><div class="art-num">09</div><div><div class="art-title">Reflexology across cultures</div><div class="art-desc">From ancient Egypt to Bangkok temple massage to your lunch break. The same idea, arriving everywhere.</div></div><div class="art-status coming">coming</div></div>
+    <div class="article-row"><div class="art-num">10</div><div><div class="art-title">Ashy feet — an origin story</div><div class="art-desc">Black Twitter made it a punchline. The history underneath it is anything but. A piece about visibility, servitude, and the politics of presentation.</div></div><div class="art-status coming">coming</div></div>
+  </div>
+</div>
+
+<div class="xlink-strip">
+  <span class="xlink-label">connected rooms</span>
+  <a class="xlink" href="holiday-calendar.html">The Foot Holiday Calendar</a>
+  <a class="xlink" href="soft-where-it-counts.html">Soft Where It Counts</a>
+  <a class="xlink" href="glossary.html">Glossary of Sole</a>
+  <a class="xlink" href="explore.html">← back to explore</a>
+</div>
+
+<footer>
+  <a class="f-logo" href="index.html">uncalloused</a>
+  <div class="f-copy">uncalloused.com · educational only · all contributors 18+ · uncalloused media</div>
+</footer>
+<script src="images.js"></script>
+</body>
+</html>

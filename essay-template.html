@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- STEP 1: Change this title -->
+<title>ESSAY TITLE — Uncalloused</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .essay-wrap{max-width:720px;margin:0 auto;padding:4rem 3rem 6rem;}
+  .essay-meta{display:flex;gap:1.5rem;align-items:center;margin-bottom:2.5rem;flex-wrap:wrap;}
+  .essay-section{font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;padding:3px 10px;border:0.5px solid rgba(176,141,106,0.35);color:rgba(176,141,106,0.7);}
+  .essay-date{font-size:0.55rem;color:rgba(232,226,217,0.28);letter-spacing:0.08em;}
+  .essay-tag{font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;border:0.5px solid rgba(220,100,100,0.3);color:rgba(220,100,100,0.6);}
+
+  /* STEP 2: Change h1 content below */
+  .essay-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;color:var(--cream);margin-bottom:1.5rem;}
+  .essay-title em{font-style:italic;color:var(--gold);}
+
+  /* STEP 3: Change or remove the hero image pool */
+  .essay-hero-img{width:100%;margin-bottom:2.5rem;overflow:hidden;position:relative;background:#1a1510;}
+  .essay-hero-img img{width:100%;display:block;opacity:0;transition:opacity 0.7s ease;}
+  .essay-hero-img img.loaded{opacity:1;}
+
+  .essay-lede{font-family:'Playfair Display',serif;font-size:1.15rem;line-height:1.75;color:rgba(232,226,217,0.82);margin-bottom:2rem;font-style:italic;}
+
+  /* Body copy */
+  .essay-body{font-family:'Playfair Display',serif;font-size:1rem;line-height:1.9;color:rgba(232,226,217,0.72);}
+  .essay-body p{margin-bottom:1.5rem;}
+  .essay-body p:last-child{margin-bottom:0;}
+  .essay-body strong{color:var(--cream);font-weight:700;}
+  .essay-body em{color:var(--gold);font-style:italic;}
+
+  /* Pull quote */
+  .pull{border-left:2px solid var(--gold);padding:1.1rem 1.5rem;margin:2.5rem 0;font-size:1.05rem;line-height:1.7;font-style:italic;color:var(--cream);}
+
+  /* Section break */
+  .break{display:flex;align-items:center;gap:1rem;margin:2.5rem 0;}
+  .break::before,.break::after{content:'';flex:1;height:0.5px;background:rgba(176,141,106,0.2);}
+  .break span{font-size:0.48rem;letter-spacing:0.2em;color:rgba(176,141,106,0.35);}
+
+  /* Rue note — use for health/science asides */
+  .rue-aside{background:rgba(176,141,106,0.05);border:0.5px solid rgba(176,141,106,0.15);padding:1.25rem 1.5rem;margin:2rem 0;font-size:0.68rem;line-height:1.8;color:var(--muted);}
+  .rue-aside::before{content:'rue notes: ';font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(176,141,106,0.55);display:block;margin-bottom:0.4rem;}
+
+  /* End signature */
+  .essay-sig{margin-top:3rem;padding-top:2rem;border-top:0.5px solid var(--border);font-family:'DM Mono',monospace;font-size:0.58rem;color:rgba(232,226,217,0.22);letter-spacing:0.08em;}
+
+  @media(max-width:760px){
+    .essay-wrap{padding:3rem 1.5rem 4rem;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">uncalloused</a>
+  <div class="nav-tabs">
+    <a class="nav-tab" href="index.html">home</a>
+    <a class="nav-tab" href="index.html#calendar">the calendar</a>
+    <a class="nav-tab" href="index.html#rue">meet rue</a>
+    <a class="nav-tab active" href="explore.html">explore</a>
+    <a class="nav-tab cta" href="index.html#subscribe">subscribe</a>
+  </div>
+</nav>
+
+<div class="essay-wrap">
+
+  <!-- META ROW: section badge + date + optional 18+ tag -->
+  <div class="essay-meta">
+    <!-- STEP 4: Change section to match where this lives:
+         sole & culture / soft where it counts / pedicare / in the flesh -->
+    <span class="essay-section">sole & culture</span>
+    <!-- STEP 5: Update date -->
+    <span class="essay-date">April 2026</span>
+    <!-- STEP 6: Remove this tag if the essay isn't adult-labeled -->
+    <!-- <span class="essay-tag">18+</span> -->
+  </div>
+
+  <!-- STEP 7: Your essay title. Use <em> for the italic gold word. -->
+  <h1 class="essay-title">Essay title goes <em>here.</em></h1>
+
+  <!-- STEP 8: Hero image. Change data-pool to match the section,
+       or remove the whole block if you don't want a hero image. -->
+  <div class="essay-hero-img" id="essay-img" style="height:380px;"></div>
+
+  <!-- STEP 9: The lede. One or two sentences. Sets the tone. -->
+  <p class="essay-lede">This is where the first line goes. Make it earn its place — the lede is the only sentence everyone reads.</p>
+
+  <!-- STEP 10: Your essay body. Each <p> is a paragraph.
+       Use <strong> for emphasis. Use <em> for the gold italic word.
+       Use .pull for a pull quote. Use .break for a section divider.
+       Use .rue-aside for a science/health note in Rue's voice. -->
+  <div class="essay-body">
+
+    <p>First paragraph of the essay. This is where you establish the territory. Don't explain what you're about to say — just say it. The reader arrived because the title worked. Now keep them.</p>
+
+    <p>Second paragraph. Go deeper. This is usually where the history or the science enters — but through the body, not the textbook. The reader should feel something before they learn something.</p>
+
+    <!-- Pull quote example — use sparingly, one per essay maximum -->
+    <div class="pull">The sentence that should stop someone mid-scroll. The thing that gets screenshotted.</div>
+
+    <p>Continue the essay. The pull quote is a landing pad, not a conclusion. Pick up the thread and keep moving.</p>
+
+    <div class="break"><span>·</span></div>
+
+    <p>After a section break, you can shift register. Get more personal, or more clinical, or more historical. The break tells the reader they're allowed to breathe before the next thing.</p>
+
+    <!-- Rue aside example — for science or health context -->
+    <div class="rue-aside">This is where Rue adds a clinical note, a research citation, or a quiet correction to something the culture gets wrong. Keep it under four sentences. It should feel like a margin annotation, not a footnote.</div>
+
+    <p>The penultimate paragraph. Start closing the loop. Bring back something from the opening — an image, a word, a question. The reader should feel the essay completing itself.</p>
+
+    <p>The last line. This is where Rue lives — the raised brow, the tender pivot, the thing that makes someone screenshot it. Don't cut it in editing. Don't explain it. Just end.</p>
+
+  </div>
+
+  <div class="essay-sig">uncalloused · <span id="essay-section-sig">sole & culture</span> · written under a pen name</div>
+
+</div>
+
+<!-- CROSS LINKS: update href values to point to related pages -->
+<div class="xlink-strip">
+  <span class="xlink-label">connected</span>
+  <!-- STEP 11: Update these three links to match this essay's neighbors -->
+  <a class="xlink" href="sole-culture.html">← back to sole & culture</a>
+  <a class="xlink" href="glossary.html">glossary of sole</a>
+  <a class="xlink" href="holiday-calendar.html">foot holiday calendar</a>
+  <a class="xlink" href="index.html#rue">ask rue</a>
+</div>
+
+<footer>
+  <a class="f-logo" href="index.html">uncalloused</a>
+  <div class="f-copy">uncalloused.com · educational only · all contributors 18+ · uncalloused media · ai imagery disclosed</div>
+</footer>
+
+<script>
+// STEP 12: Change the pool name to match the section:
+// 'sole-culture' / 'soft' / 'pedicare' / 'steel-toe' / 'hero'
+const ESSAY_POOL = 'sole-culture';
+
+// Load a random image from the right pool
+const POOLS = {
+  hero: ['images/amir-sole-to-sole.png','images/amir-toes-ink.png','images/amir-beach-watercolor.png','images/steel-toe-man.png','images/sock-monk.png','images/holi-sneakers.png','images/studio-stiletto.png','images/professor.png','images/bath-triptych.png','images/stocking-ad.png','images/stocking-ad-v2.png','images/hiking-sandal.png','images/rainbow-socks.png','images/grocery-wedge.png','images/rhinestone-heels.png'],
+  'sole-culture': ['images/amir-beach-watercolor.png','images/amir-sole-to-sole.png','images/amir-toes-ink.png','images/holi-sneakers.png','images/stocking-ad.png','images/stocking-ad-v2.png','images/grocery-wedge.png','images/bath-triptych.png'],
+  soft: ['images/steel-toe-man.png','images/amir-sole-to-sole.png','images/studio-stiletto.png','images/professor.png','images/rhinestone-heels.png','images/bath-triptych.png'],
+  pedicare: ['images/amir-beach-watercolor.png','images/amir-toes-ink.png','images/amir-sole-to-sole.png','images/bath-triptych.png','images/hiking-sandal.png','images/rainbow-socks.png'],
+  'steel-toe': ['images/steel-toe-man.png','images/sock-monk.png','images/holi-sneakers.png','images/amir-beach-watercolor.png','images/amir-sole-to-sole.png','images/hiking-sandal.png','images/professor.png','images/rhinestone-heels.png']
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+  const slot = document.getElementById('essay-img');
+  if (!slot) return;
+  const pool = POOLS[ESSAY_POOL] || POOLS.hero;
+  const src = pool[Math.floor(Math.random() * pool.length)];
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = '';
+  img.onload = () => img.classList.add('loaded');
+  if (img.complete) img.classList.add('loaded');
+  slot.appendChild(img);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Explore — Uncalloused</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.explore-intro{padding:4rem 3rem 3rem;max-width:640px;}
+.explore-intro p{font-size:0.72rem;line-height:1.9;color:var(--muted);margin-top:1rem;}
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.door{background:var(--ink);display:flex;flex-direction:column;}
+.door-body{padding:1.75rem;display:flex;flex-direction:column;flex:1;}
+.door-kicker{font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(232,226,217,0.28);margin-bottom:0.85rem;}
+.door-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--cream);font-style:italic;line-height:1.15;margin-bottom:0.85rem;transition:color 0.2s;}
+.door:hover .door-title{color:var(--gold);}
+.door-desc{font-size:0.63rem;line-height:1.85;color:var(--muted);flex:1;margin-bottom:1.5rem;}
+.door-rooms{margin-bottom:1.25rem;}
+.door-room{display:block;font-size:0.62rem;color:var(--dim);text-decoration:none;padding:0.5rem 0;border-top:0.5px solid var(--border);transition:color 0.2s;}
+.door-room:last-child{border-bottom:0.5px solid var(--border);}
+.door-room:hover{color:var(--cream);}
+.door-enter{font-size:0.58rem;letter-spacing:0.1em;color:var(--gold);text-decoration:none;border-bottom:0.5px solid rgba(176,141,106,0.3);padding-bottom:1px;display:inline-block;margin-top:auto;}
+.doors-row2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:1px;}
+.door-wide{background:var(--ink);display:grid;grid-template-columns:260px 1fr;}
+.door-wide-body{padding:2rem;display:flex;flex-direction:column;}
+.door-wide-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--cream);font-style:italic;line-height:1.1;margin-bottom:0.85rem;}
+.door-wide-title em{color:var(--gold);}
+.door-wide-desc{font-size:0.63rem;line-height:1.85;color:var(--muted);flex:1;margin-bottom:1.25rem;}
+@media(max-width:900px){.doors{grid-template-columns:1fr 1fr;}.doors-row2{grid-template-columns:1fr;}.door-wide{grid-template-columns:1fr;}}
+@media(max-width:580px){.doors{grid-template-columns:1fr;}.explore-intro{padding:3rem 1.5rem 2rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">uncalloused</a>
+  <div class="nav-tabs">
+    <a class="nav-tab" href="index.html">home</a>
+    <a class="nav-tab" href="index.html#calendar">the calendar</a>
+    <a class="nav-tab" href="index.html#rue">meet rue</a>
+    <a class="nav-tab active" href="explore.html">explore</a>
+    <a class="nav-tab cta" href="index.html#subscribe">subscribe</a>
+  </div>
+</nav>
+
+<div class="explore-intro">
+  <div class="eyebrow">foot culture · body truth · soft where it counts</div>
+  <h1>go <em>deeper.</em></h1>
+  <p>Five ways in. No dead ends. The only exits are Substack — when you're ready — and Amazon, when Rue recommends a book. Every room connects to every other. Pick a door.</p>
+</div>
+
+<div class="doors">
+  <div class="door">
+    <div class="img-slot img-slot-med" data-pool="sole-culture"></div>
+    <div class="door-body">
+      <div class="door-kicker">foot culture</div>
+      <div class="door-title">Sole & Culture</div>
+      <div class="door-desc">History, anthropology, shame, beauty ritual. The foot across civilizations — lotus feet, ashy heels, the scandalous ankle. Your sponsor bait. Your SEO engine.</div>
+      <div class="door-rooms">
+        <a class="door-room" href="holiday-calendar.html">The Foot Holiday Calendar</a>
+        <a class="door-room" href="sole-culture.html">Essays & History</a>
+        <a class="door-room" href="contributor-spotlight.html">Contributor Spotlight</a>
+      </div>
+      <a class="door-enter" href="sole-culture.html">enter sole & culture →</a>
+    </div>
+  </div>
+
+  <div class="door">
+    <div class="img-slot img-slot-med" data-pool="soft"></div>
+    <div class="door-body">
+      <div class="door-kicker">soft where it counts</div>
+      <div class="door-title">Soft Where It Counts</div>
+      <div class="door-desc">Desire, psychology, fetish, kink, parasocial intimacy. The territory most publications won't enter without flinching. Rue enters without flinching.</div>
+      <div class="door-rooms">
+        <a class="door-room" href="soft-where-it-counts.html">Essays & Explainers</a>
+        <a class="door-room" href="glossary.html">Glossary of Sole</a>
+        <a class="door-room" href="callus-index.html">The Callus Index</a>
+      </div>
+      <a class="door-enter" href="soft-where-it-counts.html">enter soft where it counts →</a>
+    </div>
+  </div>
+
+  <div class="door">
+    <div class="img-slot img-slot-med" data-pool="pedicare"></div>
+    <div class="door-body">
+      <div class="door-kicker">body truth</div>
+      <div class="door-title">Pedicare</div>
+      <div class="door-desc">Physical care, movement, anatomy. The quiet credential page. Foot soaks, plantar fascia, ballet footwork, reflexology. Also: the affiliate opportunity.</div>
+      <div class="door-rooms">
+        <a class="door-room" href="pedicare.html">Care & Anatomy</a>
+        <a class="door-room" href="reading-room.html">The Reading Room</a>
+        <a class="door-room" href="foot-anatomy.html">Foot Anatomy 101</a>
+      </div>
+      <a class="door-enter" href="pedicare.html">enter pedicare →</a>
+    </div>
+  </div>
+</div>
+
+<div class="doors-row2">
+  <div class="door-wide">
+    <div class="img-slot" data-pool="soft" style="min-height:300px;"></div>
+    <div class="door-wide-body">
+      <div class="door-kicker">the column</div>
+      <div class="door-wide-title">Ask <em>Rue.</em></div>
+      <div class="door-wide-desc">The brand's emotional center. One free letter here every month. The rest — and the ability to write to Rue directly — live on Substack. She answers what your doctor, therapist, and HR department won't.</div>
+      <div class="door-rooms">
+        <a class="door-room" href="index.html#rue">This month's free letter</a>
+        <a class="door-room" href="callus-index.html">Topics Rue has answered</a>
+      </div>
+      <a class="door-enter" href="index.html#rue">meet rue →</a>
+    </div>
+  </div>
+
+  <div class="door-wide">
+    <div class="img-slot" data-pool="steel-toe" style="min-height:300px;"></div>
+    <div class="door-wide-body">
+      <div class="door-kicker">30-day series · $27</div>
+      <div class="door-wide-title">Steel Toe <em>Rebellion.</em></div>
+      <div class="door-wide-desc">Remove the Cage. Feel the Ground. Thirty mornings. One email at 8am. For men who are done pretending armor is the same as strength. The steel toe bends inward under enough force — and crushes the very thing it was built to protect.</div>
+      <div class="door-rooms">
+        <a class="door-room" href="steel-toe.html">What 30 days looks like</a>
+        <a class="door-room" href="manifesto.html">The Manifesto</a>
+      </div>
+      <a class="door-enter btn-p" href="steel-toe.html" style="margin-top:1rem;">start the rebellion — $27 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="xlink-strip">
+  <span class="xlink-label">also</span>
+  <a class="xlink" href="index.html#calendar">2027 calendar</a>
+  <a class="xlink" href="index.html#rue">meet Rue</a>
+  <a class="xlink" href="index.html#subscribe">subscribe</a>
+</div>
+
+<footer>
+  <a class="f-logo" href="index.html">uncalloused</a>
+  <div class="f-copy">uncalloused.com · educational only · all contributors 18+ · uncalloused media</div>
+</footer>
+<script src="images.js"></script>
+</body>
+</html>
